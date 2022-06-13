@@ -1,6 +1,6 @@
 json.pokemon do
     json.extract! @pokemon, :id, :name, :attack, :defense, :poke_type
-    json.image_url asset_path("/images/pokemon_snaps/#{@pokemon.image_url}")
+    json.image_url asset_path("/pokemon_snaps/#{@pokemon.image_url}")
 end
 
 json.move do 
@@ -11,6 +11,15 @@ json.move do
     end
 end
 
-json.items do
-    
+if @pokemon.items.length !=0
+    json.items do
+        @pokemon.items.each do |item|
+            json.set! item.id do
+                json.extract! item, :id, :pokemon_id, :name, :price, :happiness
+                json.image_url asset_path(item.image_url)
+            end
+        end
+    end
+else
+    json.item({})
 end
