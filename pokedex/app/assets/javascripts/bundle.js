@@ -33391,6 +33391,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var _actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./actions/pokemon_actions */ "./frontend/actions/pokemon_actions.js");
 /* harmony import */ var _util_api_util__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./util/api_util */ "./frontend/util/api_util.js");
+Object(function webpackMissingModule() { var e = new Error("Cannot find module 'store/store'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+
 
 
 
@@ -33399,6 +33401,9 @@ document.addEventListener('DOMContentLoaded', function () {
   var rootEl = document.getElementById('root');
   window.receiveAllPokemon = _actions_pokemon_actions__WEBPACK_IMPORTED_MODULE_2__.receiveAllPokemon;
   window.fetchAllPokemon = _util_api_util__WEBPACK_IMPORTED_MODULE_3__.fetchAllPokemon;
+  var store = Object(function webpackMissingModule() { var e = new Error("Cannot find module 'store/store'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
   react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Pokedex"), rootEl);
 });
 })();
